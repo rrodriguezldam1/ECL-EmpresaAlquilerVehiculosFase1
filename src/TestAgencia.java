@@ -3,6 +3,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * @author Ramón Rodríguez Lucas
  *    
  */
 public class TestAgencia {

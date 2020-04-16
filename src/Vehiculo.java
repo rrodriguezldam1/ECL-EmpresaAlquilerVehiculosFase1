@@ -1,5 +1,7 @@
 
 /**
+ * @author RamÛn RodrÌguez Lucas
+ * 
  * Representa a un veh√≠culo en alquiler
  * De esta clase no se crear√°n instancias
  * 
@@ -15,31 +17,76 @@
  * misma matr√≠cula
  * 
  */
-public class Vehiculo {
-	private String matricula;
-	private String marca;
-	private String modelo;
-	private double precioDia;
-
-	/**
-	 * Constructor
-	 */
-	public Vehiculo(String matricula, String marca, String modelo,
-	        double precioDia) {
-		this.matricula = matricula.toUpperCase();
-		this.marca = marca.toUpperCase();
-		this.modelo = modelo.toUpperCase();
-		this.precioDia = precioDia;
-
+public abstract class Vehiculo {
+	String matricula;
+	String marca;
+	String modelo;
+	double precio;
+	
+	public Vehiculo(String matricula, String marca, String modelo, double precio) {
+		this.matricula = matricula;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.precio = precio;
+	}
+	
+	
+	
+	public String getMatricula() {
+		return matricula;
 	}
 
-	/**
-	 * Redefinici√≥n de hashCode()
-	 * 
-	 */
+
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+
+
+
+	public String getMarca() {
+		return marca;
+	}
+
+
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+
+
+	public String getModelo() {
+		return modelo;
+	}
+
+
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+
+
+	public double getPrecio() {
+		return precio;
+	}
+
+
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+
+
+	public abstract double calcularPrecioAlquiler(int dias);
+	
+	
 	@Override
-	public int hashCode() {
-		return matricula.hashCode() * 13;
+	public String toString() {
+		return "Matricula: "+matricula+" | Marca: "+marca+" | Modelo: "+modelo+"\n Precio dÌa alquiler: "+precio;
 	}
+}
 
 }
